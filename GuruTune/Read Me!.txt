@@ -1,0 +1,122 @@
+############# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+####
+####    GuruTune - Read Me
+####
+############# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+####
+####	NAME:		GuruTune
+#### 	AUTHOR:		Charles Boynton (Guru)
+#### 	DATE:		06/03/2024
+#### 	EMAIL:		GuruTecLLC@Gmail.com
+#### 	SYNOPSIS:   Tunes numerous settings to increase Windows 11 systen responsiveness 
+####
+#### 	VERSION HISTORY:
+#### 	    Ver: 0; Ver Date: 06/03/2024; Initial Version
+#### 	    Ver: 1; Ver Date: 04/10/2025; Initial 'Stripped' Version
+#### 	    Ver: 2; Ver Date: 07/22/2025; Added Additional changes to Service Startup Type, added exit messages
+#### 	    Ver: 2.1; Ver Date: 08/01/2025; Changed XBox services to Manual from Disabled
+#### 	    Ver: 3; Ver Date: 08/09/2025; Adding in Cache clearing, Log-Me, Set-RegKey, Reporting tasks, Restore Point creations
+####		     Added Numerous Additional Settings
+#### 	    Ver: 3.1; Ver Date: 09/07/2025; Re-adding in minimum time between restore points, Removing Update Reporting
+####		     Added Reporting of services orig state, Removed Disk Caching settings, added Set-Service
+#### 	    Ver: 3.1.1; Ver Date: 09/16/2025; Minor corrections to Set-Service - $Name Help Message
+#### 	    Ver: 4; Ver Date: 09/17/2025; Numerous changes to settings and structure to improve performance increase.
+#### 	    Ver: 4.1; Ver Date: 09/24/2025; Cleaned up Comments
+#### 	    Ver: 4.2; Ver Date: 09/24/2025; Cleaned up Power Settings
+#### 	    Ver: 4.2.1; Ver Date: 10/09/2025; Cleaned Up, Added a few settings for bdedit and HW Accelerated Gpu scheduling
+#### 	    Ver: 5; Ver Date: 10/18/2025; Major Changes, added performance test, Modularized actionm functions
+#### 	    Ver: 5.1; Ver Date: 10/23/2025; Major Changes, added Focused testing to Set-Regkey, 
+####                    Additional Cleanup and CPU Waits for tests
+#### 	    Ver: 5.1.1; Ver Date: 10/24/2025; Correcting math for computer scores
+#### 	    Ver: 5.2; Ver Date: 10/28/2025; Added Additional Registry Tuning Items
+#### 	    Ver: 5.2.1; Ver Date: 10/30/2025; Fixed Report-Drivers, added Increase Percentage, Other minor changes
+#### 	    Ver: 5.2.2; Ver Date: 12/6/2025; Minor Reporting Change
+#### 	    Ver: 5.2.3; Ver Date: 12/8/2025; Added Reporting of User and Computer Names
+#### 	    Ver: 5.2.4; Ver Date: 12/16/2025; Trimming Set-Registry Testing, corrected Repair-DISM Validation
+#### 	    Ver: 5.3; Ver Date: 12/23/2025; Added Numerous Reg Values and corrections, and Checkdisk
+#### 	    Ver: 5.3.1; Ver Date: 12/28/2025; Removed Test-Network functionality, Minor corrections to Comp 
+####                    Score formula and msgbox notifications
+#### 	    Ver: 5.3.2; Ver Date: 12/29/2025; Added Reset-WindowsUpdates
+#### 	    Ver: 5.3.3; Ver Date: 12/29/2025; Added Disable Delivery Optimization
+#### 	    Ver: 5.3.4; Ver Date: 01/07/2026; Added Additional Manual Services, Changed Message Boxes to tiny forms
+#### 	    Ver: 6; Ver Date: 01/13/2026; Added GUI, Disable CoPilot and Disable Recall
+#### 	    Ver: 6.1; Ver Date: 01/26/2026; Addition of minor services change, Added DiagTrack & ClickToRunSvc set to manual
+#### 	    Ver: 6.1.1; Ver Date: 01/26/2026; Added Report-Specs, and test to initial speed check to avoid redundant test
+#### 	    Ver: 6.1.2; Ver Date: 01/27/2026; Commented out Widget and Search bar setting changes
+#### 	    Ver: 6.2; Ver Date: 02/01/2026; Added Disk Cleanup, Change File Explorer Start location to C:, 
+####                    Disable: folder data type detection, Websearch In Start, Search Suggestions, 
+####                    Added: Disable-Indexing & Remove-WebExperience, $AllButton, * Added AV Scan
+#### 	    Ver: 6.3; Ver Date: 02/15/2026; Adding Infotips, re-added OS Check, added Version Check
+#### 	    Ver: 6.3.1; Ver Date: 02/15/2026; Adjusted network tuning, Get-EarliestLogfile, adjusted Get-OrigCompScore, 
+####                    Modularized Go-Pressed, removed from autoclose
+#### 	    Ver: 6.3.2; Ver Date: 02/19/2026; Correct Clear-Temp, changed output folder to Desktop\Gurutune, 
+####                    Corrected Get-EarliestLogFile to sort by filename, Adjusted Services
+#### 	    Ver: 6.3.3; Ver Date: 02/19/2026; removed Log-Me in Get-EarliestLogfile
+#### 	    Ver: 6.3.3.1; Ver Date: 02/19/2026; Updated Logging in set-Regkey
+#### 	    Ver: 6.4; Ver Date: 02/19-20/2026; Added Registry Reverting, Adjusted logging, Corrected Power Plan Selection, 
+####                    changed PROCTHROTTLEMIN 75 | Out-Null    # DC CPU MIN(Battery), Adjusted Form screen position
+####                    Added Clean-PowerPlans, adjusted powerplan selection
+#### 	    Ver: 6.4.1; Ver Date: 02/20/2026; Added Reboot to registry restore, re-ordered Functions for ease , updated
+####                    Main Sub "remote version not found" actions, Disabled "Disable Web Exp Pack", Added Tooltips,
+####                    Added Donation button, Additional Variable Cleanup
+#### 	    Ver: 6.4.2; Ver Date: 02/22/2026; Reworked Initial Speed Test Requirements
+#### 	    Ver: 6.5; Ver Date: 02/23/2026; Added Verify-RemoteHash, Adjusted logging for Get-RemoteVersion and Clear-Temp
+####                    Renamed Disable-copilot to Remove-Co-pilot, test-speed pulled OScore first, Added Set-Verbose
+####                    Moved Version verification to Verify-Version, adjusted Set-Services logging for reversion ease
+####                    Adjusted Log-Me to pull Get-EarliestLogfile, Added Get-ServiceList and Updated Set-Services
+####                    Added Revert-Services, Functionised Verify-RemoteHash and Verify-OS, Added Delays in Test-Disk,
+####                    Adjusted options labeled as system changes for restore point, adjusted Repair-SFC Function,
+####                    Adjusted form alignment, corrected button in CheckRevertSvc, Ajusted Set-OrigRegValue, 
+####                    Added timestamp to Backup-Reg, updated Go-Pressed to clear form at end, Switched to System.Windows.Forms.MessageBox
+#### 	    Ver: 6.5.1; Ver Date: 02/23-24/2026; Correct Verify-remotehash
+#### 	    Ver: 6.5.2; Ver Date: 02/24/2026; Adding Verify-VSSRunning and 
+#### 	    Ver: 6.5.2.1; Ver Date: 02/25/2026; Adjusted Set-OrigRegValue to use any result not just "Reg changed:"
+#### 	    Ver: 6.5.2.2; Ver Date: 02/25/2026; Adjusting Set-Original Value, and Restore point logic, Disabled RevReg Button for debugging
+#### 	    Ver: 6.5.2.3; Ver Date: 02/25/2026; Correct "Remove OneDrive" after name change
+#### 	    Ver: 6.5.2.4; Ver Date: 02/26/2026; Moved Speed-Test to end, Disable-Recall Added "-norestart" to supress prompt
+#### 	    Ver: 6.5.2.5; Ver Date: 02/27/2026; Minor bug corrections
+#### 	    Ver: 6.5.2.6; Ver Date: 02/28/2026; Adding "env:LOCALAPPDATA\Temp" to Clear-temp, Added Set-ScheduleTask
+#### 	    Ver: 6.5.3; Ver Date: 03/11/2026; Updated Set-RegKey for more reliable reporting of $orig, re-enabled RevReg Button, 
+####                    Moved Remove-OneDrive and Remove-CoPilot to buttons instead of checks, Added Placeholder for OneDrive File Deletion
+#### 	    Ver: 6.5.3.1; Ver Date: 03/12/2026; Added additional logging to Remove-OneDrive and Remove-OneNote, Corrected Selection 
+####                    of install file in remove-OneDrive
+#### 	    Ver: 6.5.3.2; Ver Date: 03/18/2026; Cleaned up and sorted registry changes in Set-registry and Revert-registry
+#### 	    Ver: 6.5.3.3; Ver Date: 03/28/2026; Corrected Wording of MsgBoxes
+#### 	    Ver: 6.5.4; Ver Date: 03/28/2026; Added Clean-OneDrive
+#### 	    Ver: 6.5.5; Ver Date: 04/06/2026; Moved GuruTuneLog and BackupReg to My Docs instead of Desktop
+#### 	    Ver: 6.6; Ver Date: 06/22/2026; Preparing for GitHub, Removed Donation link, Commented out Version and Hashfile Checker
+####
+############# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+####
+####	To run, right click GuruTune and select 'Run With PowerShell'
+####
+############# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+####
+####	If GuruTune errors right away, this probably means that your 'Execution Policy'
+####    is not set to enable the running of scripts.
+####
+####	First, sorry for the anxiety.
+####	
+####	Second, to fix this:
+####		Click the Start Menu and type 'PowerShell'
+####		Click 'Run As Administrator' on the top result
+####		Copy and paste: 
+####			"Set-ExecutionPolicy -ExecutionPolicy Unrestricted"
+####		Press Enter and Accept any prompts
+####		Rerun GuruTune
+####		To Revert, Copy and paste: 
+####			"Set-ExecutionPolicy -ExecutionPolicy Restricted"
+####		Press Enter and Accept any prompts
+####
+####	Thank for your patience with Microsoft's 'Security Feature'.
+####	
+############# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+####	Free For Personal Use.
+####	Contact For professional licensing.
+####
+####    Donations accepted @: https://www.gurutecllc.com/donate-today
+####
+####	HTTP:\\www.GuruTecLLC.Com
+####	GuruTecLLC@GMail.Com
+####
+############# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
