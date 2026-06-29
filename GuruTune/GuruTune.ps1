@@ -14,8 +14,8 @@ $script:Username = $env:USERNAME
 ####	NAME:		GuruTune
 #### 	AUTHOR:		Charles Boynton (Guru)
 #### 	DATE:		06/03/2024
-#### 	EMAIL:		GuruTecLLC@Gmail.com
-#### 	SYNOPSIS:   Tunes numerous settings to increase Windows 11 systen responsiveness 
+#### 	EMAIL:		BoyntonCJ@GMail.Com
+#### 	SYNOPSIS:   Tunes numerous settings to increase Windows 11 system responsiveness 
 ####
 #### 	VERSION HISTORY:
 #### 	    Ver: 0; Ver Date: 06/03/2024; Initial Version
@@ -121,10 +121,7 @@ $script:Username = $env:USERNAME
 ####	Free For Personal Use.
 ####	Contact For professional licensing.
 ####
-####    Donations accepted @: https://www.gurutecllc.com/donate-today
-####
-####	HTTP:\\www.GuruTecLLC.Com
-####	GuruTecLLC@GMail.Com
+####	BoyntonCJ@GMail.Com
 ####
 ############# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
