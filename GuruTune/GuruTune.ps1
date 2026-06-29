@@ -1,7 +1,7 @@
-﻿Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 $ErrorActionPreference = "SilentlyContinue"
-$script:Version = "6.6"
+$script:Version = "6.6.1"
 $script:ComputerName = $env:COMPUTERNAME
 $script:Username = $env:USERNAME
 
@@ -14,7 +14,7 @@ $script:Username = $env:USERNAME
 ####	NAME:		GuruTune
 #### 	AUTHOR:		Charles Boynton (Guru)
 #### 	DATE:		06/03/2024
-#### 	EMAIL:		BoyntonCJ@GMail.Com
+#### 	EMAIL:		GuruTecLLC@Gmail.com
 #### 	SYNOPSIS:   Tunes numerous settings to increase Windows 11 system responsiveness 
 ####
 #### 	VERSION HISTORY:
@@ -92,6 +92,7 @@ $script:Username = $env:USERNAME
 #### 	    Ver: 6.5.4; Ver Date: 03/28/2026; Added Clean-OneDrive
 #### 	    Ver: 6.5.5; Ver Date: 04/06/2026; Moved GuruTuneLog and BackupReg to My Docs instead of Desktop
 #### 	    Ver: 6.6; Ver Date: 06/22/2026; Preparing for GitHub, Removed Donation link, Commented out Version and Hashfile Checker
+#### 	    Ver: 6.6.1; Ver Date: 06/22/2026; Typo correction, removing Website References
 ####
 ############# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 ####
@@ -119,9 +120,9 @@ $script:Username = $env:USERNAME
 ####	
 ############# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 ####	Free For Personal Use.
-####	Contact For professional licensing.
+####	Contact For professional licensing or custom coding.
 ####
-####	BoyntonCJ@GMail.Com
+####	GuruTecLLC@GMail.Com
 ####
 ############# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -180,8 +181,7 @@ $script:Username = $env:USERNAME
         Have A Blessed Day,
               ~ Guru
           
-        GuruTecLLC@Gmail.com
-      HTTPS:\\WWW.GuruTecLLC.Com"
+        GuruTecLLC@Gmail.com"
                 $Response = [System.Windows.Forms.MessageBox]::Show($strMsg,"OneDrive Path Unknown",[System.Windows.Forms.MessageBoxButtons]::OK,[System.Windows.Forms.MessageBoxIcon]::Exclamation)
                 Log-Me -Msg "OneDrive File Clearing Aborted - OneDrive Path Unknown!" -disp $true
 
@@ -363,15 +363,11 @@ $script:Username = $env:USERNAME
 
         Press 'OK' to proceed anyway.
 *******************************************
-            Donations Accepted @:
-
-https://www.gurutecllc.com/donate-today
 
             Have A Blessed Day,
                 ~ Guru
           
-            GuruTecLLC@Gmail.com
-            HTTPS:\\WWW.GuruTecLLC.Com"
+            GuruTecLLC@Gmail.com"
                 $response = [System.Windows.Forms.MessageBox]::Show($msgBox,$strMsg,"Out of Space",[System.Windows.Forms.MessageBoxButtons]::OKCancel,[System.Windows.Forms.MessageBoxIcon]::Information)
                 $msgBox.Close()
                 If ($Response -like "Cancel"){
@@ -439,8 +435,7 @@ Press 'OK' When you are ready
 Have A Blessed Day
 
         ~Guru
-GuruTecLLC@Gmail.com
-HTTPS:\\WWW.GuruTecLLC.Com"
+GuruTecLLC@Gmail.com"
         $response = [System.Windows.Forms.MessageBox]::Show($top,$strMsg,"Guru Tune Version $script:Version",[System.Windows.Forms.MessageBoxButtons]::OKCancel)
         $top.Dispose()
         If ($response -like "OK"){
@@ -490,8 +485,7 @@ Press 'OK' When you are ready
 Have A Blessed Day
 
         ~Guru
-GuruTecLLC@Gmail.com
-HTTPS:\\WWW.GuruTecLLC.Com"
+GuruTecLLC@Gmail.com"
         $response = [System.Windows.Forms.MessageBox]::Show($top,$strMsg,"Guru Tune Version $script:Version",[System.Windows.Forms.MessageBoxButtons]::OKCancel)
         $top.Dispose()
         If ($response -like "OK"){
@@ -812,15 +806,11 @@ HTTPS:\\WWW.GuruTecLLC.Com"
                 full responsiveness.
 
 *******************************************
-            Donations Accepted @:
-
-https://www.gurutecllc.com/donate-today
 
                 Have A Blessed Day,
                         ~ Guru
           
-            GuruTecLLC@Gmail.com
-            HTTPS:\\WWW.GuruTecLLC.Com"
+            GuruTecLLC@Gmail.com"
         $response = [System.Windows.Forms.MessageBox]::Show($msgBox,$strMsg,"Reboot Required",
             [System.Windows.Forms.MessageBoxButtons]::OKCancel,
             [System.Windows.Forms.MessageBoxIcon]::Information)
@@ -850,8 +840,7 @@ Please reboot As Soon As Possible
         Have A Blessed Day,
                 ~ Guru
           
-        GuruTecLLC@Gmail.com
-    HTTPS:\\WWW.GuruTecLLC.Com"
+        GuruTecLLC@Gmail.com"
             $response = [System.Windows.Forms.MessageBox]::Show($msgBox,$strMsg,"Reboot Required",
                 [System.Windows.Forms.MessageBoxButtons]::OK,
                 [System.Windows.Forms.MessageBoxIcon]::Information)
@@ -942,25 +931,24 @@ Please reboot As Soon As Possible
         $top.Show()
         $top.Hide()
         $strMsg = "
-                      Guru Tune Version $script:Version
+                 Guru Tune Version $script:Version
         ************************************
                     
-                          Welcome $script:Username
-
+                    Welcome $script:Username
+    
         ************************************
                   
-            I WILL reboot for the offline 3rd scan.
+             I WILL reboot for the offline 3rd scan.
                     
         ************************************
                Press 'OK' When you are ready
-                            to proceed
-   
+                       to proceed
+
         ************************************
                     Have A Blessed Day
 
-                            ~Guru
-                GuruTecLLC@Gmail.com
-            HTTPS:\\WWW.GuruTecLLC.Com"
+                        ~Guru
+                GuruTecLLC@Gmail.com"
         $response = [System.Windows.Forms.MessageBox]::Show($top,$strMsg,"Guru Tune Version $script:Version",[System.Windows.Forms.MessageBoxButtons]::OKCancel)
         if ($response -ne "OK") {
             Remove-Variable -Name strMsg, response -ErrorAction SilentlyContinue | out-null
@@ -1014,8 +1002,7 @@ Please reboot As Soon As Possible
                     Have A Blessed Day
 
                             ~Guru
-                GuruTecLLC@Gmail.com
-            HTTPS:\\WWW.GuruTecLLC.Com"
+                GuruTecLLC@Gmail.com"
         $response = [System.Windows.Forms.MessageBox]::Show($top,$strMsg,"Guru Tune Version $script:Version",[System.Windows.Forms.MessageBoxButtons]::OKCancel)
         if ($response -ne "OK") {
             Remove-Variable -Name strMsg, response -ErrorAction SilentlyContinue | out-null
@@ -1637,7 +1624,7 @@ Proceed with caution if you did
 
 **********************************    
 
- Please visit: GuruTecLLC.Com to 
+ Please visit GitHub to 
  obtain the most updated version
     and verify hash files.
 
@@ -1678,7 +1665,7 @@ Proceed with caution if you did
 
 **********************************    
 
- Please visit: GuruTecLLC.Com to 
+ Please visit GitHub to 
  obtain the most updated version
     and verify hash files.
 
@@ -1836,7 +1823,7 @@ I would HIGHLY recommend upgrading as
 
 **********************************    
 
- Please visit: GuruTecLLC.Com to 
+ Please visit GitHub to 
  obtain the most updated version.
 
 
@@ -1927,15 +1914,11 @@ I will not be able to create a Restore Point!
 
         Press 'OK' to proceed anyway.
 *******************************************
-            Donations Accepted @:
-
-https://www.gurutecllc.com/donate-today
-
+            
             Have A Blessed Day,
                 ~ Guru
           
-            GuruTecLLC@Gmail.com
-            HTTPS:\\WWW.GuruTecLLC.Com"
+            GuruTecLLC@Gmail.com"
                 $response = [System.Windows.Forms.MessageBox]::Show($msgBox,$strMsg,"Out of Space",[System.Windows.Forms.MessageBoxButtons]::OKCancel,[System.Windows.Forms.MessageBoxIcon]::Information)
                 $msgBox.Close()
                 If ($Response -like "Cancel"){
@@ -2040,8 +2023,7 @@ https://www.gurutecllc.com/donate-today
                     Have A Blessed Day
 
                             ~Guru
-                GuruTecLLC@Gmail.com
-            HTTPS:\\WWW.GuruTecLLC.Com"
+                GuruTecLLC@Gmail.com"
             $response = [System.Windows.Forms.MessageBox]::Show($top,$strMsg,"Guru Tune Version $script:Version",[System.Windows.Forms.MessageBoxButtons]::OKCancel)
             $top.Dispose()
             if ($response -ne "OK") {
@@ -2127,15 +2109,11 @@ https://www.gurutecllc.com/donate-today
         A Computer Reboot Is Required
         Press 'OK' when you are ready
 *******************************************
-            Donations Accepted @:
-
-https://www.gurutecllc.com/donate-today
-
+            
                 Have A Blessed Day,
                         ~ Guru
           
-            GuruTecLLC@Gmail.com
-            HTTPS:\\WWW.GuruTecLLC.Com"
+            GuruTecLLC@Gmail.com"
                 $response = [System.Windows.Forms.MessageBox]::Show($msgBox,$strMsg,"Reboot Required",
                     [System.Windows.Forms.MessageBoxButtons]::OKCancel,
                     [System.Windows.Forms.MessageBoxIcon]::Information)
@@ -2165,8 +2143,7 @@ Please reboot As Soon As Possible
         Have A Blessed Day,
                 ~ Guru
           
-        GuruTecLLC@Gmail.com
-    HTTPS:\\WWW.GuruTecLLC.Com"
+        GuruTecLLC@Gmail.com"
                     $response = [System.Windows.Forms.MessageBox]::Show($msgBox,$strMsg,"Reboot Required",
                         [System.Windows.Forms.MessageBoxButtons]::OK,
                         [System.Windows.Forms.MessageBoxIcon]::Information)
@@ -2197,15 +2174,10 @@ Please reboot As Soon As Possible
                 full responsiveness.
 
 *******************************************
-            Donations Accepted @:
-
-https://www.gurutecllc.com/donate-today
-
-                Have A Blessed Day,
-                        ~ Guru
+            Have A Blessed Day,
+                   ~ Guru
           
-            GuruTecLLC@Gmail.com
-            HTTPS:\\WWW.GuruTecLLC.Com"
+            GuruTecLLC@Gmail.com"
                 $response = [System.Windows.Forms.MessageBox]::Show($msgBox,$strMsg,"Reboot Required",
                         [System.Windows.Forms.MessageBoxButtons]::OK,
                         [System.Windows.Forms.MessageBoxIcon]::Information)
@@ -2419,8 +2391,6 @@ https://www.gurutecllc.com/donate-today
             "Pagefile"          = "Configures pagefile size and placement for stability and speed."
             "Power"             = "Creates an Optimized Windows power plan for maximum performance."
             "Registry"          = "Applies registry optimizations with automatic backup."
-#            "Remove Co-Pilot"   = "Removes Windows Copilot Completely."
-#            "Remove OneDrive"   = "Uninstalls MS OneDrive App. You will have to use OneDrive Online after this!"
             "Report"            = "Generates a detailed system report."
             "Services"          = "Disables unnecessary services while preserving compatibility."
             "SFC"               = "Runs System File Checker to repair protected system files."
