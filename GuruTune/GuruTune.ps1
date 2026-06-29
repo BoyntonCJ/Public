@@ -92,7 +92,7 @@ $script:Username = $env:USERNAME
 #### 	    Ver: 6.5.4; Ver Date: 03/28/2026; Added Clean-OneDrive
 #### 	    Ver: 6.5.5; Ver Date: 04/06/2026; Moved GuruTuneLog and BackupReg to My Docs instead of Desktop
 #### 	    Ver: 6.6; Ver Date: 06/22/2026; Preparing for GitHub, Removed Donation link, Commented out Version and Hashfile Checker
-#### 	    Ver: 6.6.1; Ver Date: 06/22/2026; Typo correction, removing Website References
+#### 	    Ver: 6.6.1; Ver Date: 06/29/2026; Typo correction, removing Website References
 ####
 ############# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 ####
