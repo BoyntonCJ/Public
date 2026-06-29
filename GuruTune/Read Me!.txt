@@ -8,7 +8,7 @@
 #### 	AUTHOR:		Charles Boynton (Guru)
 #### 	DATE:		06/03/2024
 #### 	EMAIL:		GuruTecLLC@Gmail.com
-#### 	SYNOPSIS:   Tunes numerous settings to increase Windows 11 systen responsiveness 
+#### 	SYNOPSIS:   Tunes numerous settings to increase Windows 11 system responsiveness 
 ####
 #### 	VERSION HISTORY:
 #### 	    Ver: 0; Ver Date: 06/03/2024; Initial Version
