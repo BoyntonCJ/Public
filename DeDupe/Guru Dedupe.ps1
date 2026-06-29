@@ -15,9 +15,9 @@
 #############
 ####
 ####	NAME:		Guru DeDupe
-#### 	AUTHOR:		Charles Boynton (Guru)
+#### 	AUTHOR:		Charles Boynton
 #### 	DATE:		06/14/2026
-#### 	EMAIL:		GuruTecLLC@Gmail.com
+#### 	EMAIL:		BoyntonCJ@Gmail.com
 #### 	SYNOPSIS:   Runs non-recursive search on the supplied folder for images and videos, compares file hash's and keeps the oldest copy.
 ####                Moves newer copies to 'Dupes' subfolder of folder selected.
 ####
@@ -61,7 +61,7 @@
 ####
 ####	Have A Blessed Day!
 ####
-####	GuruTecLLC@GMail.Com
+####	BoyntonCJ@GMail.Com
 ####
 ############# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
